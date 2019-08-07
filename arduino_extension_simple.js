@@ -460,7 +460,7 @@
       ['-'],
       [' ', '旋轉 %n 到 %n 度', 'setServo', 7, 180],
       [' ', '旋轉 %n 度', 'getServoPosition', 7],
-    ]
+    ],
     /*de: [
       ['h', 'Wenn Arduino verbunden ist', 'whenConnected'],
       [' ', 'Verbinde %m.hwOut mit Pin %n', 'connectHW', 'LED A', 3],
@@ -577,6 +577,7 @@
       ['-'],
       ['r', '%n を %n ... %n から %n ... %n へ変換', 'mapValues', 50, 0, 100, -240, 240]
     ],
+    */
     ko: [
       ['h', '아두이노가 연결됐을 때', 'whenConnected'],
       [' ', '%m.hwOut 를 %n 번 핀에 연결하기', 'connectHW', 'led A', 3],
@@ -605,7 +606,8 @@
       ['r', '아날로그 %n 번 핀의 값', 'analogRead', 0],
       ['-'],
       ['r', '%n 을(를) %n ~ %n 에서 %n ~ %n 의 범위로 바꾸기', 'mapValues', 50, 0, 100, -240, 240]
-    ],
+    ]
+    /*
     nb: [
       ['h', 'når enheten tilkobles', 'whenConnected'],
       [' ', 'koble %m.hwOut til digital %n', 'connectHW', 'LED A', 3],
