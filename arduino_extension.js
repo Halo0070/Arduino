@@ -543,6 +543,7 @@
   }
 
   var blocks = {
+    /*
     en: [
       ['h', 'when device is connected', 'whenConnected'],
       [' ', 'connect %m.hwOut to pin %n', 'connectHW', 'led A', 3],
@@ -688,6 +689,7 @@
       ['-'],
       ['r', '%n を %n ... %n から %n ... %n へ変換', 'mapValues', 50, 0, 100, -240, 240]
     ],
+    */
     ko: [
       ['h', '아두이노가 연결됐을 때', 'whenConnected'],
       [' ', '%m.hwOut 를 %n 번 핀에 연결하기', 'connectHW', 'led A', 3],
@@ -716,7 +718,8 @@
       ['r', '아날로그 %n 번 핀의 값', 'analogRead', 0],
       ['-'],
       ['r', '%n 을(를) %n ~ %n 에서 %n ~ %n 의 범위로 바꾸기', 'mapValues', 50, 0, 100, -240, 240]
-    ],
+    ]
+    /*
     nb: [
       ['h', 'når enheten tilkobles', 'whenConnected'],
       [' ', 'koble %m.hwOut til digital %n', 'connectHW', 'LED A', 3],
@@ -949,9 +952,11 @@
       ['-'],
       ['r', '對應 %n 由 %n %n 為 %n %n', 'mapValues', 50, 0, 100, -240, 240]
     ]
+    */
   };
 
   var menus = {
+    /*
     en: {
       buttons: ['button A', 'button B', 'button C', 'button D'],
       btnStates: ['pressed', 'released'],
@@ -1002,6 +1007,7 @@
       ops: ['>', '=', '<'],
       servos: ['サーボ A', 'サーボ B', 'サーボ C', 'サーボ D']
     },
+    */
     ko: {
       buttons: ['버튼 A', '버튼 B', '버튼 C', '버튼 D'],
       btnStates: ['눌림', '떼짐'],
@@ -1011,7 +1017,8 @@
       outputs: ['켜기', '끄기'],
       ops: ['>', '=', '<'],
       servos: ['서보모터 A', '서보모터 B', '서보모터 C', '서보모터 D']
-    },
+    }
+    /*
     nb: {
       buttons: ['knapp A', 'knapp B', 'knapp C', 'knapp D'],
       btnStates: ['trykkes', 'slippes'],
@@ -1092,6 +1099,7 @@
       ops: ['>', '=', '<'],
       servos: ['伺服馬達 A', '伺服馬達 B', '伺服馬達 C', '伺服馬達 D']
     }
+    */
   };
 
   var descriptor = {
