@@ -826,7 +826,7 @@
   var descriptor = {
     blocks: blocks[lang],
     menus: menus[lang],
-    url: 'https://github.com/Halo0070/Arduino'
+    url: 'http://halo0070.github.io/Arduino/'
   };
 
   ScratchExtensions.register('Arduino Debug', descriptor, ext, {type:'serial'});
