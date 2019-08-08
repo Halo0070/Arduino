@@ -515,7 +515,7 @@
     poller = setInterval(function() {
       queryFirmware();
     }, 1000);
-
+    
     watchdog = setTimeout(function() {
       clearInterval(poller);
       poller = null;
@@ -561,8 +561,21 @@
   };
 
   ext.buzzer = function() {
-    digitalWrite(6, HIGH);
-    digitalWrite(6, LOW);
+    /*
+    var tones = new Array();
+    tones[0] = 261; //도
+    tones[1] = 294; //레
+    tones[2] = 330; //미
+    tones[3] = 349; //파
+    tones[4] = 392; //솔
+    tones[5] = 440; //라
+    tones[6] = 494; //시
+    tones[7] = 523; //도
+    */
+
+    analogWrite(1, 261);
+    
+  
   };
   ext.ultraSonic = function(sensor_pin1, sensor_pin2){
     var trig = digitalRead(sensor_pin1);
@@ -570,6 +583,21 @@
     pinMode(trig, OUTPUT)
     pinMode(echo, INPUT)
 
+    var micro = require('microseconds');
+    setTimeout(function(){
+      digitalWrite(trig, LOW);
+      digitalWrite(echo, LOW);
+    }, 0.2); 
+    setTimeout(function(){
+     digitalWrite(trig, HIGH);
+     var t0 = window.performance.now ()-1000;
+    }, 1); 
+    digitalWrite(trig, LOW);
+    var t1 = window.performance.now ()-1000;
+    var duration = t1 - t0;
+    var distance = duration / 29.0 / 2.0;
+    console.log(distance);
+  };
   
 
  
@@ -752,8 +780,10 @@
       ['-'],
       ['h', '아날로그 %n 번 핀의 값이 %m.ops %n% 일 때', 'whenAnalogRead', 1, '>', 50],
       ['r', '아날로그 %n 번 핀의 값', 'analogRead', 0],
+      /*
       ['-'],
       ['r', '%n 을(를) %n ~ %n 에서 %n ~ %n 의 범위로 바꾸기', 'mapValues', 50, 0, 100, -240, 240],
+      */
       ['-'],
       [' ', '로봇을 %n 속도로 앞으로 움직이기','moveToFront', 50,],
       [' ', '로봇을 %n 속도로 뒤로 움직이기','moveToBack', 50],
@@ -762,9 +792,10 @@
       [' ', '로봇을 %n 속도로 오른쪽으로 움직이기','moveToRight', 50],
       ['-'],
       [' ', '로봇을 멈추기','moveToStop'],
+
       [' ', '%n 번 핀을 %m.outputs','buzzer', 1, '켜기'],
       ['r', '울트라소닉 Trig %n Echo %n 센서 값','ultraSonic', 12, 13]
-
+      [' ', '로봇의 부저를 설정하기', 'buzzer']
 
     ],
     nb: [
