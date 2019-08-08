@@ -762,7 +762,7 @@
       [' ', '로봇을 %n 속도로 오른쪽으로 움직이기','moveToRight', 50],
       ['-'],
       [' ', '로봇을 멈추기','moveToStop'],
-      [' ', '%n 번 핀의 버저를 %s% 로 설정하기', 'analogWrite', 'buzzer', 3, 100],
+      [' ', '로봇의 부저를 %n으로 설정하기', 'analogWrite', 'buzzer', 261]
     ],
     nb: [
       ['h', 'når enheten tilkobles', 'whenConnected'],
