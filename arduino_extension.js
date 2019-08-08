@@ -561,6 +561,7 @@
   };
 
   ext.buzzer = function(tones) {
+    /*
     var tones = new Array();
     tones[0] = 261; //도
     tones[1] = 294; //레
@@ -570,8 +571,10 @@
     tones[5] = 440; //라
     tones[6] = 494; //시
     tones[7] = 523; //도
+    */
 
-    analogWrite(6, tones);
+    analogWrite(6, 261);
+    
   
   };
 
