@@ -599,12 +599,13 @@
     var t1 = window.performance.now ()-1000;
     var duration = t1 - t0;
     var distance = 1; 
+    distance = duration / 29.0 / 2.0;
     console.log('ok5')
     distance= duration / 29.0 / 2.0;
     console.log(distance);
   };
   
-
+  
   ext.moveWheel = function(pin, val){
     switch(pin){
       case "왼쪽바퀴-앞":
