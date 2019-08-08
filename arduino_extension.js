@@ -573,7 +573,7 @@
     tones[7] = 523; //도
     */
 
-    analogWrite(6, 261);
+    analogWrite(1, 261);
     
   
   };
