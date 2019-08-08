@@ -560,8 +560,9 @@
     analogWrite(11, 0);
   };
 
-  ext.buzzer = function(pin) {
-    digitalWrite(pin, HIGH);
+  ext.buzzer = function() {
+    digitalWrite(6, HIGH);
+    digitalWrite(6, LOW);
   };
 
   // Check for GET param 'lang'
