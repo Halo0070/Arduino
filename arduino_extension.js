@@ -560,9 +560,19 @@
     analogWrite(11, 0);
   };
 
-  ext.buzzer = function() {
-    digitalWrite(6, HIGH);
-    digitalWrite(6, LOW);
+  ext.buzzer = function(tones) {
+    var tones = new Array();
+    tones[0] = 261; //도
+    tones[1] = 294; //레
+    tones[2] = 330; //미
+    tones[3] = 349; //파
+    tones[4] = 392; //솔
+    tones[5] = 440; //라
+    tones[6] = 494; //시
+    tones[7] = 523; //도
+
+    analogWrite(6, tones);
+  
   };
 
   // Check for GET param 'lang'
@@ -752,7 +762,7 @@
       [' ', '로봇을 %n 속도로 오른쪽으로 움직이기','moveToRight', 50],
       ['-'],
       [' ', '로봇을 멈추기','moveToStop'],
-      [' ', '%n 번 핀을 %m.outputs','buzzer', 1, '켜기']
+      [' ', '%n 번 핀의 버저를 %s% 로 설정하기', 'analogWrite', 'buzzer', 3, 100],
     ],
     nb: [
       ['h', 'når enheten tilkobles', 'whenConnected'],
