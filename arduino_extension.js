@@ -570,21 +570,6 @@
     pinMode(trig, OUTPUT)
     pinMode(echo, INPUT)
 
-  var micro = require('microseconds');
-  setTimeout(function(){
-    digitalWrite(trig, LOW);
-    digitalWrite(echo, LOW);
-  }, 0.2); 
-  setTimeout(function(){
-    digitalWrite(trig, HIGH);
-    var t0 = window.performance.now ()-1000;
-  }, 1); 
-  digitalWrite(trig, LOW);
-  var t1 = window.performance.now ()-1000;
-  var duration = t1 - t0;
-  var distance = duration / 29.0 / 2.0;
-  console.log(distance);
-};
   
 
  
