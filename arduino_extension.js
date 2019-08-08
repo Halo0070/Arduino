@@ -515,7 +515,7 @@
     poller = setInterval(function() {
       queryFirmware();
     }, 1000);
-
+    
     watchdog = setTimeout(function() {
       clearInterval(poller);
       poller = null;
