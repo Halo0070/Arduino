@@ -532,6 +532,7 @@
     device = null;
   };
 
+<<<<<<< HEAD
   ext.moveToFront = function(speed1) {
     analogWrite(9, speed1);
     analogWrite(10, speed1);
@@ -540,6 +541,16 @@
   ext.moveToBack = function(speed2) {
     analogWrite(3,  speed2);
     analogWrite(11, speed2);
+=======
+  ext.moveToFront = function() {
+    analogWrite(9, 50);
+    analogWrite(10, 70);
+  };
+
+  ext.moveToBack = function() {
+    analogWrite(3, 50);
+    analogWrite(11, 70);
+>>>>>>> 8c312a6bda30f86f433f2aff66dfbc8cc6a0e0ea
   };
 
   ext.moveToLeft = function(speed3) {
@@ -737,7 +748,7 @@
       ['-'],
       ['r', '%n 을(를) %n ~ %n 에서 %n ~ %n 의 범위로 바꾸기', 'mapValues', 50, 0, 100, -240, 240],
       ['-'],
-      [' ', '로봇을 %n 속도로 앞으로 움직이기','moveToFront', 50],
+      [' ', '로봇을 %n 속도로 앞으로 움직이기','moveToFront', 50,],
       [' ', '로봇을 %n 속도로 뒤로 움직이기','moveToBack', 50],
       ['-'],
       [' ', '로봇을 %n 속도로 왼쪽으로 움직이기','moveToLeft', 50],
