@@ -540,7 +540,7 @@
     analogWrite(11, 0);
   };
 
-  ext.buzzer = function(pin, tones) {
+  ext.buzzer = function(pin, val) {
     /*
     var tones = new Array();
     tones[0] = 261; //도
@@ -555,28 +555,28 @@
 
    switch(pin){
     case "도":
-      analogWrite(6, tones);
+      analogWrite(6, val);
       break;
     case "레":
-      analogWrite(6, tones);
+      analogWrite(6, val);
       break;
     case "미":
-      analogWrite(6, tones);
+      analogWrite(6, val);
       break;
     case "파":
-      analogWrite(6, tones);
+      analogWrite(6, val);
       break;
     case "솔":
-      analogWrite(6, tones);
+      analogWrite(6, val);
       break;
     case "라":
-      analogWrite(6, tones);
+      analogWrite(6, val);
       break;
     case "시":
-      analogWrite(6, tones);
+      analogWrite(6, val);
       break;
     case "도#":
-      analogWrite(6, tones);
+      analogWrite(6, val);
       break;
   
   }
@@ -739,7 +739,8 @@
       [' ', 'porta luminosità di %m.leds a %n%', 'setLED', 'led A', 100],
       [' ', 'cambia luminosità di %m.leds a %n%', 'changeLED', 'led A', 20],
       ['-'],
-      [' ', 'ruota %m.servos fino a %n gradi', 'rotateServo', 'servo A', 180],
+      [' ', 'ruota %m.servos fino a 
+      %n gradi', 'rotateServo', 'servo A', 180],
       [' ', 'ruota %m.servos di %n gradi', 'changeServo', 'servo A', 20],
       ['-'],
       ['h', 'quando tasto %m.buttons è %m.btnStates', 'whenButton', 'pulsante A', 'premuto'],
