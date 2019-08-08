@@ -540,7 +540,7 @@
   ext.moveToBack = function(speed2) {
     analogWrite(3,  speed2);
     analogWrite(11, speed2);
-
+  };
 
   ext.moveToLeft = function(speed3) {
     analogWrite(9, speed3);
