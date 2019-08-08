@@ -560,7 +560,7 @@
     analogWrite(11, 0);
   };
 
-  ext.buzzer = function(tones) {
+  ext.buzzer = function() {
     /*
     var tones = new Array();
     tones[0] = 261; //도
@@ -755,8 +755,10 @@
       ['-'],
       ['h', '아날로그 %n 번 핀의 값이 %m.ops %n% 일 때', 'whenAnalogRead', 1, '>', 50],
       ['r', '아날로그 %n 번 핀의 값', 'analogRead', 0],
+      /*
       ['-'],
       ['r', '%n 을(를) %n ~ %n 에서 %n ~ %n 의 범위로 바꾸기', 'mapValues', 50, 0, 100, -240, 240],
+      */
       ['-'],
       [' ', '로봇을 %n 속도로 앞으로 움직이기','moveToFront', 50,],
       [' ', '로봇을 %n 속도로 뒤로 움직이기','moveToBack', 50],
