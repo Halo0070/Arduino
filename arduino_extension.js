@@ -564,6 +564,31 @@
     digitalWrite(6, HIGH);
     digitalWrite(6, LOW);
   };
+  ext.ultraSonic = function(sensor_pin1, sensor_pin2){
+    var trig = digitalRead(sensor_pin1);
+    var echo = digitalRead(sensor_pin2);
+    pinMode(trig, OUTPUT)
+    pinMode(echo, INPUT)
+
+  var micro = require('microseconds');
+  setTimeout(function(){
+    digitalWrite(trig, LOW);
+    digitalWrite(echo, LOW);
+  }, 0.2); 
+  setTimeout(function(){
+    digitalWrite(trig, HIGH);
+    var t0 = window.performance.now ()-1000;
+  }, 1); 
+  digitalWrite(trig, LOW);
+  var t1 = window.performance.now ()-1000;
+  var duration = t1 - t0;
+  var distance = duration / 29.0 / 2.0;
+  console.log(distance);
+};
+  
+
+ 
+  
 
   // Check for GET param 'lang'
   var paramString = window.location.search.replace(/^\?|\/$/g, '');
@@ -726,10 +751,10 @@
       [' ', '%m.hwOut 를 %n 번 핀에 연결하기', 'connectHW', 'led A', 3],
       /*
       [' ', '%m.hwIn 를 아날로그 %n 번 핀에 연결하기', 'connectHW', '회전 손잡이', 0],
-      ['-'],    
+      ['-'],
       ['h', '%m.buttons 의 상태가 %m.btnStates 일 때', 'whenButton', '버튼 A', '눌림'],
       ['b', '%m.buttons 가 눌려져 있는가?', 'isButtonPressed', '버튼 A'],
-      ['-'], 
+      ['-'],
       ['h', '%m.hwIn 의 값이 %m.ops %n% 일 때', 'whenInput', '회전 손잡이', '>', 50],
       ['r', '%m.hwIn 의 값', 'readInput', '회전 손잡이'],
       */
@@ -752,7 +777,10 @@
       [' ', '로봇을 %n 속도로 오른쪽으로 움직이기','moveToRight', 50],
       ['-'],
       [' ', '로봇을 멈추기','moveToStop'],
-      [' ', '%n 번 핀을 %m.outputs','buzzer', 1, '켜기']
+      [' ', '%n 번 핀을 %m.outputs','buzzer', 1, '켜기'],
+      ['r', '울트라소닉 Trig %n Echo %n 센서 값','ultraSonic', 12, 13]
+
+
     ],
     nb: [
       ['h', 'når enheten tilkobles', 'whenConnected'],
