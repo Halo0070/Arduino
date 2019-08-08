@@ -540,7 +540,7 @@
     analogWrite(11, 0);
   };
 
-  ext.buzzer = function() {
+  ext.buzzer = function(pin, tones) {
     /*
     var tones = new Array();
     tones[0] = 261; //도
@@ -553,7 +553,33 @@
     tones[7] = 523; //도
     */
 
-    tone(6, 261);
+   switch(pin){
+    case "도":
+      analogWrite(6, tones);
+      break;
+    case "레":
+      analogWrite(6, tones);
+      break;
+    case "미":
+      analogWrite(6, tones);
+      break;
+    case "파":
+      analogWrite(6, tones);
+      break;
+    case "솔":
+      analogWrite(6, tones);
+      break;
+    case "라":
+      analogWrite(6, tones);
+      break;
+    case "시":
+      analogWrite(6, tones);
+      break;
+    case "도#":
+      analogWrite(6, tones);
+      break;
+  
+  }
     
   
   };
@@ -793,8 +819,8 @@
 
       [' ', '%n 번 핀을 %m.outputs','buzzer', 1, '켜기'],
       ['r', '울트라소닉 Trig %n Echo %n 센서 값','ultraSonic', 12, 13],
-      [' ', '로봇의 부저를 설정하기', 'buzzer'],
-      [' ', '%m.wheel %n 으로 정하기', 'moveWheel', '왼쪽바퀴-앞', 50]
+      [' ', '%m.wheel %n 으로 정하기', 'moveWheel', '왼쪽바퀴-앞', 50],
+      [' ', '%m.buzz %n 으로 부저 설정', 'buzzer', 1000]
 
     ],
     nb: [
@@ -1091,7 +1117,8 @@
       outputs: ['켜기', '끄기'],
       ops: ['>', '=', '<'],
       servos: ['서보모터 A', '서보모터 B', '서보모터 C', '서보모터 D'],
-      wheel: ['왼쪽바퀴-앞', '왼쪽바퀴-뒤', '오른쪽바퀴-앞', '오른쪽바퀴-뒤']
+      wheel: ['왼쪽바퀴-앞', '왼쪽바퀴-뒤', '오른쪽바퀴-앞', '오른쪽바퀴-뒤'],
+      buzz: ['도', '레', '미', '파', '솔', '라', '시', '도#']
     },
     nb: {
       buttons: ['knapp A', 'knapp B', 'knapp C', 'knapp D'],
