@@ -600,7 +600,24 @@
   };
   
 
- 
+  ext.moveWheel = function(pin, val){
+    switch(pin){
+      case "왼쪽바퀴-앞":
+        analogWrite(9, val);
+        break;
+      case "왼쪽바퀴-뒤":
+        analogWrite(3, val);
+        break;
+      case "오른쪽바퀴-앞":
+        analogWrite(10, val);
+        break;
+      case "오른쪽바퀴-뒤":
+        analogWrite(11, val);
+        break;
+      default:
+        moveToStop();
+    }
+  }
   
 
   // Check for GET param 'lang'
@@ -795,7 +812,8 @@
 
       [' ', '%n 번 핀을 %m.outputs','buzzer', 1, '켜기'],
       ['r', '울트라소닉 Trig %n Echo %n 센서 값','ultraSonic', 12, 13],
-      [' ', '로봇의 부저를 설정하기', 'buzzer']
+      [' ', '로봇의 부저를 설정하기', 'buzzer'],
+      [' ', '%m.wheel %n 으로 정하기','moveWheel', 50, '왼쪽바퀴-앞']
 
     ],
     nb: [
@@ -1091,7 +1109,8 @@
       leds: ['led A', 'led B', 'led C', 'led D'],
       outputs: ['켜기', '끄기'],
       ops: ['>', '=', '<'],
-      servos: ['서보모터 A', '서보모터 B', '서보모터 C', '서보모터 D']
+      servos: ['서보모터 A', '서보모터 B', '서보모터 C', '서보모터 D'],
+      wheel: ['왼쪽바퀴-앞', '왼쪽바퀴-뒤', '오른쪽바퀴-앞', '오른쪽바퀴-뒤']
     },
     nb: {
       buttons: ['knapp A', 'knapp B', 'knapp C', 'knapp D'],
