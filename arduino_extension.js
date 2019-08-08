@@ -795,7 +795,7 @@
 
       [' ', '%n 번 핀을 %m.outputs','buzzer', 1, '켜기'],
       ['r', '울트라소닉 Trig %n Echo %n 센서 값','ultraSonic', 12, 13],
-      [' ', '부저 테스트', 'buzzer']
+      [' ', '로봇의 부저를 설정하기', 'buzzer']
 
     ],
     nb: [
