@@ -535,7 +535,29 @@
   ext.moveToFront = function() {
     analogWrite(9, 50);
     analogWrite(10, 50);
-  }
+  };
+
+  ext.moveToBack = function() {
+    analogWrite(3, 50);
+    analogWrite(11, 50);
+  };
+
+  ext.moveToLeft = function() {
+    analogWrite(9, 20);
+    analogWrite(10, 40);
+  };
+
+  ext.moveToRight = function() {
+    analogWrite(9, 40);
+    analogWrite(10, 20);
+  };
+
+  ext.moveToStop = function() {
+    analogWrite(9, 0);
+    analogWrite(10, 0);
+    analogWrite(3, 0);
+    analogWrite(11, 0);
+  };
 
   // Check for GET param 'lang'
   var paramString = window.location.search.replace(/^\?|\/$/g, '');
@@ -722,7 +744,11 @@
       ['-'],
       ['r', '%n 을(를) %n ~ %n 에서 %n ~ %n 의 범위로 바꾸기', 'mapValues', 50, 0, 100, -240, 240],
       [' ', '아날로그 %n 번 핀의 값을 %n% 로 설정하기', 'analogWrite',3,100],
-      [' ', '로봇을 앞으로 움직이기','moveToFront']
+      [' ', '로봇을 앞으로 움직이기','moveToFront'],
+      [' ', '로봇을 뒤로 움직이기','moveToBack'],
+      [' ', '로봇을 왼쪽으로 움직이기','moveToLeft'],
+      [' ', '로봇을 오른쪽으로 움직이기','moveToRight'],
+      [' ', '로봇을 멈추기','moveToStop']
     ],
     nb: [
       ['h', 'når enheten tilkobles', 'whenConnected'],
