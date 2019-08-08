@@ -534,12 +534,12 @@
 
   ext.moveToFront = function() {
     analogWrite(9, 50);
-    analogWrite(10, 50);
+    analogWrite(10, 70);
   };
 
   ext.moveToBack = function() {
     analogWrite(3, 50);
-    analogWrite(11, 50);
+    analogWrite(11, 70);
   };
 
   ext.moveToLeft = function() {
