@@ -580,35 +580,31 @@
       break;
   
   }
-    
   
+
   };
-  ext.ultraSonic = function(sensor_pin1, sensor_pin2){
-    var trig = analogRead(sensor_pin1);
-    var echo = analogRead(sensor_pin2);
-    console.log('ok1')
+  ext.ultraSonic = function(sensor_pin1, sensor_pin2) {
+    var trig = sensor_pin1
+    var echo = sensor_pin2
+    var signal = 0;
     pinMode(trig, OUTPUT)
     pinMode(echo, INPUT)
-    console.log('ok2')
-    var micro = require('microseconds');
     setTimeout(function(){
       analogWrite(trig, LOW);
       analogWrite(echo, LOW);
     }, 0.2); 
-    console.log('ok3')
     setTimeout(function(){
       analogWrite(trig, HIGH);
-     var t0 = window.performance.now ()-1000;
+      var t0 = window.performance.now ()-1000;
     }, 1); 
-    console.log('ok4')
     analogWrite(trig, LOW);
+    while(signal = HIGH){
+      signal = analogRead(echo)
+    }
     var t1 = window.performance.now ()-1000;
     var duration = t1 - t0;
     var distance = 1; 
     distance = duration / 29.0 / 2.0;
-    console.log('ok5')
-    distance= duration / 29.0 / 2.0;
-    console.log(distance);
   };
   
   
@@ -739,8 +735,7 @@
       [' ', 'porta luminosità di %m.leds a %n%', 'setLED', 'led A', 100],
       [' ', 'cambia luminosità di %m.leds a %n%', 'changeLED', 'led A', 20],
       ['-'],
-      [' ', 'ruota %m.servos fino a 
-      %n gradi', 'rotateServo', 'servo A', 180],
+      [' ', 'ruota %m.servos fino a %n gradi', 'rotateServo', 'servo A', 180],
       [' ', 'ruota %m.servos di %n gradi', 'changeServo', 'servo A', 20],
       ['-'],
       ['h', 'quando tasto %m.buttons è %m.btnStates', 'whenButton', 'pulsante A', 'premuto'],
