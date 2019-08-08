@@ -580,22 +580,27 @@
   ext.ultraSonic = function(sensor_pin1, sensor_pin2){
     var trig = digitalRead(sensor_pin1);
     var echo = digitalRead(sensor_pin2);
+    console.log('ok1')
     pinMode(trig, OUTPUT)
     pinMode(echo, INPUT)
-
+    console.log('ok2')
     var micro = require('microseconds');
     setTimeout(function(){
       digitalWrite(trig, LOW);
       digitalWrite(echo, LOW);
     }, 0.2); 
+    console.log('ok3')
     setTimeout(function(){
      digitalWrite(trig, HIGH);
      var t0 = window.performance.now ()-1000;
     }, 1); 
+    console.log('ok4')
     digitalWrite(trig, LOW);
     var t1 = window.performance.now ()-1000;
     var duration = t1 - t0;
-    var distance = duration / 29.0 / 2.0;
+    var distance = 1; 
+    console.log('ok5')
+    distance= duration / 29.0 / 2.0;
     console.log(distance);
   };
   
