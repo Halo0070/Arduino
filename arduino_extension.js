@@ -532,6 +532,11 @@
     device = null;
   };
 
+  ext.moveToFront = function() {
+    analogWrite(9, 50);
+    analogWrite(10, 50);
+  }
+
   // Check for GET param 'lang'
   var paramString = window.location.search.replace(/^\?|\/$/g, '');
   var vars = paramString.split("&");
@@ -716,7 +721,8 @@
       ['r', '아날로그 %n 번 핀의 값', 'analogRead', 0],
       ['-'],
       ['r', '%n 을(를) %n ~ %n 에서 %n ~ %n 의 범위로 바꾸기', 'mapValues', 50, 0, 100, -240, 240],
-      [' ', '아날로그 %n 번 핀의 값을 %n% 로 설정하기', 'analogWrite',3,100]
+      [' ', '아날로그 %n 번 핀의 값을 %n% 로 설정하기', 'analogWrite',3,100],
+      [' ', '로봇을 앞으로 움직이기','moveToFront']
     ],
     nb: [
       ['h', 'når enheten tilkobles', 'whenConnected'],
