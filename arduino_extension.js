@@ -765,7 +765,7 @@
       [' ', '로봇을 %n 속도로 오른쪽으로 움직이기','moveToRight', 50],
       ['-'],
       [' ', '로봇을 멈추기','moveToStop'],
-      [' ', '로봇의 부저를 %n으로 설정하기', 'buzzer', 261]
+      [' ', '로봇의 부저를 설정하기', 'buzzer']
     ],
     nb: [
       ['h', 'når enheten tilkobles', 'whenConnected'],
