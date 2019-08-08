@@ -583,28 +583,26 @@
   
 
   };
+  
   ext.ultraSonic = function(sensor_pin1, sensor_pin2) {
-    var trig = sensor_pin1
-    var echo = sensor_pin2
-    var signal = 0;
-    pinMode(trig, OUTPUT)
-    pinMode(echo, INPUT)
-    setTimeout(function(){
-      analogWrite(trig, LOW);
-      analogWrite(echo, LOW);
-    }, 0.2); 
-    setTimeout(function(){
-      analogWrite(trig, HIGH);
-      var t0 = window.performance.now ()-1000;
-    }, 1); 
-    analogWrite(trig, LOW);
-    while(signal = HIGH){
-      signal = analogRead(echo)
-    }
-    var t1 = window.performance.now ()-1000;
-    var duration = t1 - t0;
-    var distance = 1; 
-    distance = duration / 29.0 / 2.0;
+    var five = require("johnny-five");
+    var board = new five.Board();
+
+    board.on("ready", function() {
+    var proximity = new five.Proximity({
+    controller: "HCSR04",
+    pin: 12
+  });
+
+  proximity.on("data", function() {
+    console.log("Proximity: ");
+    console.log("  cm  : ", this.cm);
+    console.log("  in  : ", this.in);
+    console.log("-----------------");
+    return this;
+  });
+
+  });
   };
   
   
