@@ -392,7 +392,7 @@
     hwList.add(hw, pin);
   };
 
-  ext.rotateServo = function(servo, deg) {
+  /*ext.rotateServo = function(servo, deg) {
     var hw = hwList.search(servo);
     if (!hw) return;
     if (deg < 0) deg = 0;
@@ -439,13 +439,13 @@
       hw.val = 0;
     }
   };
-
+*/
   ext.readInput = function(name) {
     var hw = hwList.search(name);
     if (!hw) return;
     return analogRead(hw.pin);
   };
-
+/*
   ext.whenButton = function(btn, state) {
     var hw = hwList.search(btn);
     if (!hw) return;
@@ -460,7 +460,7 @@
     if (!hw) return;
     return digitalRead(hw.pin);
   };
-
+*/
   ext.whenInput = function(name, op, val) {
     var hw = hwList.search(name);
     if (!hw) return;
@@ -720,9 +720,11 @@
       [' ', '%m.hwOut 를 %n 번 핀에 연결하기', 'connectHW', 'led A', 3],
       [' ', '%m.hwIn 를 아날로그 %n 번 핀에 연결하기', 'connectHW', '회전 손잡이', 0],
       ['-'],
+      /*
       ['h', '%m.buttons 의 상태가 %m.btnStates 일 때', 'whenButton', '버튼 A', '눌림'],
       ['b', '%m.buttons 가 눌려져 있는가?', 'isButtonPressed', '버튼 A'],
       ['-'],
+      */
       ['h', '%m.hwIn 의 값이 %m.ops %n% 일 때', 'whenInput', '회전 손잡이', '>', 50],
       ['r', '%m.hwIn 의 값', 'readInput', '회전 손잡이'],
       ['-'],
