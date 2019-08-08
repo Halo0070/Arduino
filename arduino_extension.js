@@ -723,15 +723,15 @@
     ko: [
       ['h', '아두이노가 연결됐을 때', 'whenConnected'],
       [' ', '%m.hwOut 를 %n 번 핀에 연결하기', 'connectHW', 'led A', 3],
-      [' ', '%m.hwIn 를 아날로그 %n 번 핀에 연결하기', 'connectHW', '회전 손잡이', 0],
-      ['-'],
       /*
+      [' ', '%m.hwIn 를 아날로그 %n 번 핀에 연결하기', 'connectHW', '회전 손잡이', 0],
+      ['-'],    
       ['h', '%m.buttons 의 상태가 %m.btnStates 일 때', 'whenButton', '버튼 A', '눌림'],
       ['b', '%m.buttons 가 눌려져 있는가?', 'isButtonPressed', '버튼 A'],
-      ['-'],
-      */
+      ['-'], 
       ['h', '%m.hwIn 의 값이 %m.ops %n% 일 때', 'whenInput', '회전 손잡이', '>', 50],
       ['r', '%m.hwIn 의 값', 'readInput', '회전 손잡이'],
+      */
       ['-'],
       [' ', '%n 번 핀을 %m.outputs', 'digitalWrite', 1, '켜기'],
       [' ', '%n 번 핀의 값을 %n% 로 설정하기', 'analogWrite', 3, 100],
