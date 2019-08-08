@@ -532,7 +532,6 @@
     device = null;
   };
 
-<<<<<<< HEAD
   ext.moveToFront = function(speed1) {
     analogWrite(9, speed1);
     analogWrite(10, speed1);
@@ -541,17 +540,7 @@
   ext.moveToBack = function(speed2) {
     analogWrite(3,  speed2);
     analogWrite(11, speed2);
-=======
-  ext.moveToFront = function() {
-    analogWrite(9, 50);
-    analogWrite(10, 70);
-  };
 
-  ext.moveToBack = function() {
-    analogWrite(3, 50);
-    analogWrite(11, 70);
->>>>>>> 8c312a6bda30f86f433f2aff66dfbc8cc6a0e0ea
-  };
 
   ext.moveToLeft = function(speed3) {
     analogWrite(9, speed3);
