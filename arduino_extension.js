@@ -818,7 +818,7 @@
       [' ', '%n 번 핀을 %m.outputs','buzzer', 1, '켜기'],
       ['r', '울트라소닉 Trig %n Echo %n 센서 값','ultraSonic', 12, 13],
       [' ', '로봇의 부저를 설정하기', 'buzzer'],
-      [' ', '%m.wheel %n 으로 정하기','moveWheel', 50, '왼쪽바퀴-앞']
+      [' ', '%m.wheel %n 으로 정하기', 'moveWheel', '왼쪽바퀴-앞', 50]
 
     ],
     nb: [
