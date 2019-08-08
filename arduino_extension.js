@@ -82,6 +82,7 @@
 
   var hwList = new HWList();
 
+
   function HWList() {
     this.devices = [];
 
@@ -559,6 +560,10 @@
     analogWrite(11, 0);
   };
 
+  ext.buzzer = function(pin) {
+    digitalWrite(pin, HIGH);
+  };
+
   // Check for GET param 'lang'
   var paramString = window.location.search.replace(/^\?|\/$/g, '');
   var vars = paramString.split("&");
@@ -743,7 +748,8 @@
       [' ', '로봇을 %n 속도로 왼쪽으로 움직이기','moveToLeft', 50],
       [' ', '로봇을 %n 속도로 오른쪽으로 움직이기','moveToRight', 50],
       ['-'],
-      [' ', '로봇을 멈추기','moveToStop']
+      [' ', '로봇을 멈추기','moveToStop'],
+      [' ', '%n 번 핀을 %m.outputs','buzzer', 1, '켜기']
     ],
     nb: [
       ['h', 'når enheten tilkobles', 'whenConnected'],
