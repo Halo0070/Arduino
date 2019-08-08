@@ -739,8 +739,7 @@
       [' ', 'porta luminosità di %m.leds a %n%', 'setLED', 'led A', 100],
       [' ', 'cambia luminosità di %m.leds a %n%', 'changeLED', 'led A', 20],
       ['-'],
-      [' ', 'ruota %m.servos fino a 
-      %n gradi', 'rotateServo', 'servo A', 180],
+      [' ', 'ruota %m.servos fino a %n gradi', 'rotateServo', 'servo A', 180],
       [' ', 'ruota %m.servos di %n gradi', 'changeServo', 'servo A', 20],
       ['-'],
       ['h', 'quando tasto %m.buttons è %m.btnStates', 'whenButton', 'pulsante A', 'premuto'],
