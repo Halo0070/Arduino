@@ -599,7 +599,7 @@
     console.log("  cm  : ", this.cm);
     console.log("  in  : ", this.in);
     console.log("-----------------");
-    return this;
+    return this.cm;
   });
 
   });
