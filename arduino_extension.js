@@ -591,7 +591,7 @@
     board.on("ready", function() {
     var proximity = new five.Proximity({
     controller: "HCSR04",
-    pin: 12
+    pin: 13
   });
 
   proximity.on("data", function() {
