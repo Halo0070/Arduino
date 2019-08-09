@@ -605,9 +605,6 @@
       console.log("The obstruction has moved.");
   });
 });
-
-  });
-  };
   
   
   ext.moveWheel = function(pin, val){
@@ -1207,5 +1204,5 @@
   };
 
   ScratchExtensions.register('Arduino', descriptor, ext, {type:'serial'});
-
+  }
 })({});
