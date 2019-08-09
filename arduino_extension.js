@@ -624,7 +624,7 @@
       default:
         moveToStop();
     }
-  }
+  };
   
 
   // Check for GET param 'lang'
