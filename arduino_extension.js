@@ -799,6 +799,7 @@
       ['-'],
       [' ', '%n 번 핀을 %m.outputs', 'digitalWrite', 1, '켜기'],
       [' ', '%n 번 핀의 값을 %n% 로 설정하기', 'analogWrite', 3, 100],
+      ['r', '%n 번 핀의 값을 %n% 로 설정하기', 'analogWrite', 3, 100],
       ['-'],
       ['h', '%n 번 핀의 상태가 %m.outputs 일 때', 'whenDigitalRead', 1, '켜기'],
       ['b', '%n 번 핀이 켜져있는가?', 'digitalRead', 1],
