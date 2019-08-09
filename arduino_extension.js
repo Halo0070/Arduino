@@ -809,10 +809,9 @@
       ['-'],
       [' ', '로봇을 멈추기','moveToStop'],
 
-      [' ', '%n 번 핀을 %m.outputs','buzzer', 1, '켜기'],
       ['r', '울트라소닉 Trig %n Echo %n 센서 값','ultraSonic', 12, 13],
       [' ', '%m.wheel %n 으로 정하기', 'moveWheel', '왼쪽바퀴-앞', 50],
-      [' ', '%m.buzz %n 으로 부저 설정', 'buzzer', '도', 100]
+      [' ', '아날로그 6번 핀의 부저를 %m.buzz %n 음으로 설정', 'buzzer', '도', 100]
 
     ],
     nb: [
