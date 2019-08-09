@@ -320,7 +320,7 @@
     return;
   }
   if (val < 0) val = 0;
-  else if (val > 100) val = 1000;
+  else if (val > 1000) val = 1000;
   val = Math.round((val / 1000) * 255);
   pinMode(pin, PWM);
   var msg = new Uint8Array([
