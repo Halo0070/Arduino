@@ -581,7 +581,7 @@
   }
   };
   
-  ext.ultraSonic = function(sensor_pin1) {
+  ext.ultraSonic = function(sensor_pin1, sensor_pin2) {
     var five = require("johnny-five");
     var board = new five.Board();
 
