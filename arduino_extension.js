@@ -591,16 +591,20 @@
     board.on("ready", function() {
     var proximity = new five.Proximity({
     controller: "HCSR04",
-    pin: 13
+    pin: 12
   });
 
-  proximity.on("data", function() {
-    console.log("Proximity: ");
-    console.log("  cm  : ", this.cm);
-    console.log("  in  : ", this.in);
-    console.log("-----------------");
-    return this.cm;
+    proximity.on("data", function() {
+      console.log("Proximity: ");
+      console.log("  cm  : ", this.cm);
+      console.log("  in  : ", this.in);
+      return this.cm;
   });
+
+     proximity.on("change", function() {
+      console.log("The obstruction has moved.");
+  });
+});
 
   });
   };
