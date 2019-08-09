@@ -553,7 +553,7 @@
     tones[7] = 523; //도
     */
 
-   switch(pin){
+  switch(pin){
     case "도":
       analogWrite(6, val);
       break;
@@ -578,10 +578,7 @@
     case "도#":
       analogWrite(6, val);
       break;
-  
   }
-  
-
   };
   
   ext.ultraSonic = function(sensor_pin1, sensor_pin2) {
@@ -592,20 +589,20 @@
     var proximity = new five.Proximity({
     controller: "HCSR04",
     pin: 12
-  });
+    });
 
     proximity.on("data", function() {
       console.log("Proximity: ");
       console.log("  cm  : ", this.cm);
       console.log("  in  : ", this.in);
       return this.cm;
-  });
+    });
 
-     proximity.on("change", function() {
+    proximity.on("change", function() {
       console.log("The obstruction has moved.");
-  });
-  });
-};
+    });
+    });
+  };
   
   ext.moveWheel = function(pin, val){
     switch(pin){
