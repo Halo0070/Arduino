@@ -816,7 +816,8 @@
       [' ', '%m.wheel %n 으로 정하기', 'moveWheel', '왼쪽바퀴-앞', 50],
       [' ', '6번 핀의 부저를 %m.buzz %n 음으로 설정', 'buzzer', '도', 100],
       ['-'],
-      ['r', '%n 번 핀의 값을 %n% 로 설정하기', 'analogWrite', 3, 100]
+      [' ', '%n 번 핀을 %m.outputs', 'analogWrite', 3, '켜기'],
+      ['r', '%n 번 핀을 %m.outputs', 'digitalWrite', 3, '켜기']
 
     ],
     nb: [
