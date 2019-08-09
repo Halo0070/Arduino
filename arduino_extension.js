@@ -604,8 +604,8 @@
      proximity.on("change", function() {
       console.log("The obstruction has moved.");
   });
-});
-  
+  });
+}
   
   ext.moveWheel = function(pin, val){
     switch(pin){
@@ -1204,5 +1204,5 @@
   };
 
   ScratchExtensions.register('Arduino', descriptor, ext, {type:'serial'});
-  }
+  
 })({});
