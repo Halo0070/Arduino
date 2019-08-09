@@ -605,7 +605,7 @@
       console.log("The obstruction has moved.");
   });
   });
-}
+};
   
   ext.moveWheel = function(pin, val){
     switch(pin){
