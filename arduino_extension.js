@@ -296,7 +296,6 @@
     return (digitalInputData[pin >> 3] >> (pin & 0x07)) & 0x01;
   }
 
-  /*
   function analogWrite(pin, val) {
     if (!hasCapability(pin, PWM)) {
       console.log('ERROR: valid PWM pins are ' + pinModes[PWM].join(', '));
@@ -312,23 +311,6 @@
         val >> 7]);
     device.send(msg.buffer);
   }
-  */
-
- function analogWrite(pin, val) {
-  if (!hasCapability(pin, PWM)) {
-    console.log('ERROR: valid PWM pins are ' + pinModes[PWM].join(', '));
-    return;
-  }
-  if (val < 0) val = 0;
-  else if (val > 1000) val = 1000;
-  val = Math.round((val / 100) * 255);
-  pinMode(pin, PWM);
-  var msg = new Uint8Array([
-      ANALOG_MESSAGE | (pin & 0x0F),
-      val & 0x7F,
-      val >> 7]);
-  device.send(msg.buffer);
-}
 
   function digitalWrite(pin, val) {
     if (!hasCapability(pin, OUTPUT)) {
