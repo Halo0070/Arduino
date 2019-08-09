@@ -799,7 +799,6 @@
       ['-'],
       [' ', '%n 번 핀을 %m.outputs', 'digitalWrite', 1, '켜기'],
       [' ', '%n 번 핀의 값을 %n% 로 설정하기', 'analogWrite', 3, 100],
-      ['r', '%n 번 핀의 값을 %n% 로 설정하기', 'analogWrite', 3, 100],
       ['-'],
       ['h', '%n 번 핀의 상태가 %m.outputs 일 때', 'whenDigitalRead', 1, '켜기'],
       ['b', '%n 번 핀이 켜져있는가?', 'digitalRead', 1],
@@ -813,10 +812,11 @@
 
       ['-'],
       [' ', '로봇을 멈추기','moveToStop'],
-
       ['r', '울트라소닉 Trig %n Echo %n 센서 값','ultraSonic', 12, 13],
       [' ', '%m.wheel %n 으로 정하기', 'moveWheel', '왼쪽바퀴-앞', 50],
-      [' ', '6번 핀의 부저를 %m.buzz %n 음으로 설정', 'buzzer', '도', 100]
+      [' ', '6번 핀의 부저를 %m.buzz %n 음으로 설정', 'buzzer', '도', 100],
+      ['-'],
+      ['r', '%n 번 핀의 값을 %n% 로 설정하기', 'analogWrite', 3, 100]
 
     ],
     nb: [
