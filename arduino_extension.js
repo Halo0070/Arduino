@@ -302,8 +302,8 @@
       return;
     }
     if (val < 0) val = 0;
-    else if (val > 100) val = 100;
-    val = Math.round((val / 100) * 255);
+    else if (val > 255) val = 255;
+    //val = Math.round((val / 100) * 255);
     pinMode(pin, PWM);
     var msg = new Uint8Array([
         ANALOG_MESSAGE | (pin & 0x0F),
@@ -813,7 +813,7 @@
       ['-'],
       [' ', '로봇을 멈추기','moveToStop'],
       ['r', '울트라소닉 Trig %n Echo %n 센서 값','ultraSonic', 12, 13],
-      [' ', '%m.wheel %n 으로 정하기', 'moveWheel', '왼쪽바퀴-앞', 50],
+      [' ', '%m.wheel %n 으로 정하기', 'moveWheel', '왼쪽바퀴-앞', 50], 
       [' ', '6번 핀의 부저를 %m.buzz %n 음으로 설정', 'buzzer', '도', 100],
       ['-'],
       [' ', '%n 번 핀을 %m.outputs', 'analogWrite', 3, '켜기'],
