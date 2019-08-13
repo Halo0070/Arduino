@@ -42,7 +42,7 @@
     SERIAL = 0x0A,
     PULLUP = 0x0B,
     IGNORE = 0x7F,
-    TOTAL_PIN_MODES = 13;
+    TOTAL_PIN_MODES = 13,
     TONE = 0x0A;
 
   var LOW = 0,
