@@ -43,9 +43,13 @@
     PULLUP = 0x0B,
     IGNORE = 0x7F,
     TOTAL_PIN_MODES = 13;
+    TONE = 0x0A;
 
   var LOW = 0,
     HIGH = 1;
+
+  var TONE_TONE = 0,
+    TONE_NO_TONE = 1;
 
   var MAX_DATA_BYTES = 4096;
   var MAX_PINS = 128;
@@ -343,6 +347,38 @@
     device.send(msg.buffer);
   }
 
+  function tone(pin, freq, duration) {
+    if (!hasCapability(pin, TONE)) {
+      console.log('ERROR: valid tone pins are ' + pinModes[TONE].join(', '));
+      return;
+    }
+    var msg = new Uint8Array([
+        START_SYSEX,
+        0x5F,
+        pin,
+        TONE_TONE,
+        freq & 0x7F,
+        freq >> 7,
+        duration & 0x7f,
+        duration >> 7,
+        END_SYSEX]);
+    device.send(msg.buffer);
+  }
+
+  function noTone(pin) {
+    if (!hasCapability(pin, TONE)) {
+      console.log('ERROR: valid tone pins are ' + pinModes[TONE].join(', '));
+      return;
+    }
+    var msg = new Uint8Array([
+        START_SYSEX,
+        0x5F,
+        pin,
+        TONE_NO_TONE,
+        END_SYSEX]);
+    device.send(msg.buffer);
+  }
+
   ext.whenConnected = function() {
     if (notifyConnection) return true;
     return false;
@@ -584,6 +620,14 @@
       break;
   }
   };
+
+  ext.tone = function(pin, freq, duration) {
+    tone(pin, freq, duration);
+  };
+
+  ext.noTone = function(pin) {
+    noTone(pin);
+  };
   
   ext.ultraSonic = function(sensor_pin1, sensor_pin2) {
     var five = require("johnny-five");
@@ -813,8 +857,10 @@
       ['-'],
       [' ', '로봇을 멈추기','moveToStop'],
       ['r', '울트라소닉 Trig %n Echo %n 센서 값','ultraSonic', 12, 13],
-      [' ', '%m.wheel %n 으로 정하기', 'moveWheel', '왼쪽바퀴-앞', 50], 
-      [' ', '6번 핀의 부저를 %m.buzz %n 음으로 설정', 'buzzer', '도', 100],
+      [' ', '%m.wheel %n 으로 정하기', 'moveWheel', '왼쪽바퀴-앞', 50],
+      [' ', 'tone on pin %n, freq %n, duration %n', 'tone', 3, 440, 1000],
+      [' ', 'stop tone on pin %n', 'noTone', 3], 
+      //[' ', '6번 핀의 부저를 %m.buzz %n 음으로 설정', 'buzzer', '도', 100],
       ['-'],
       [' ', '%n 번 핀을 %m.outputs', 'analogWrite', 3, '켜기'],
       ['r', '%n 번 핀을 %m.outputs', 'digitalWrite', 3, '켜기']
