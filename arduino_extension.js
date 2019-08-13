@@ -48,8 +48,8 @@
   var LOW = 0,
     HIGH = 1;
 
-  var TONE_TONE = 0,
-    TONE_NO_TONE = 1;
+  var TONE_TONE = 1,
+    TONE_NO_TONE = 0;
 
   var MAX_DATA_BYTES = 4096;
   var MAX_PINS = 128;
@@ -279,6 +279,7 @@
     device.send(msg.buffer);
   }
 
+
   function analogRead(pin) {
     if (pin >= 0 && pin < pinModes[ANALOG].length) {
       return Math.round((analogInputData[pin] * 100) / 1023);
@@ -378,6 +379,14 @@
         END_SYSEX]);
     device.send(msg.buffer);
   }
+
+  ext.tone = function(pin, freq, duration) {
+    tone(pin, freq, duration);
+  };
+
+  ext.noTone = function(pin) {
+    noTone(pin);
+  };
 
   ext.whenConnected = function() {
     if (notifyConnection) return true;
@@ -619,14 +628,6 @@
       analogWrite(6, val);
       break;
   }
-  };
-
-  ext.tone = function(pin, freq, duration) {
-    tone(pin, freq, duration);
-  };
-
-  ext.noTone = function(pin) {
-    noTone(pin);
   };
   
   ext.ultraSonic = function(sensor_pin1, sensor_pin2) {
