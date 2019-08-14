@@ -847,15 +847,13 @@
       [' ', '아날로그 %n 번 핀의 값을 %n로 설정하기', 'analogWrite', 3, 255],
       ['-'],
       ['h', '%n 번 핀의 상태가 %m.outputs 일 때', 'whenDigitalRead', 1, '켜기'],
-      ['b', '%n 번 핀이 켜져있는가?', 'digitalRead', 1],
+      //['b', '%n 번 핀이 켜져있는가?', 'digitalRead', 1],
       ['b', '디지털 %n 번 핀의 센서값', 'digitalWrite', 1],
       ['-'],
       ['h', '아날로그 %n 번 핀의 값이 %m.ops %n% 일 때', 'whenAnalogRead', 1, '>', 50],
       ['r', '아날로그 %n 번 핀의 값', 'analogRead', 0],
       ['-'],
       ['r', '%n 번 핀을(를) %n ~ %n 에서 %n ~ %n 의 범위로 바꾸기', 'mapValues', 50, 0, 100, -240, 240],
-      
-
       ['-'],
       [' ', '로봇을 멈추기','moveToStop'],
       [' ', '%m.wheel %n 으로 정하기', 'moveWheel', '왼쪽바퀴-앞', 50],
