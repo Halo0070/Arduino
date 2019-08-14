@@ -831,8 +831,6 @@
       ['r', '%n を %n ... %n から %n ... %n へ変換', 'mapValues', 50, 0, 100, -240, 240]
     ],
     ko: [
-      ['h', '아두이노가 연결됐을 때', 'whenConnected'],
-      [' ', '%m.hwOut 를 %n 번 핀에 연결하기', 'connectHW', 'led A', 3],
       /*
       [' ', '%m.hwIn 를 아날로그 %n 번 핀에 연결하기', 'connectHW', '회전 손잡이', 0],
       ['-'],
@@ -842,29 +840,31 @@
       ['h', '%m.hwIn 의 값이 %m.ops %n% 일 때', 'whenInput', '회전 손잡이', '>', 50],
       ['r', '%m.hwIn 의 값', 'readInput', '회전 손잡이'],
       */
+      ['h', '아두이노가 연결됐을 때', 'whenConnected'],
+      [' ', '%m.hwOut 를 %n 번 핀에 연결하기', 'connectHW', 'led A', 3],
       ['-'],
-      [' ', '%n 번 핀을 %m.outputs', 'digitalWrite', 1, '켜기'],
-      [' ', '%n 번 핀의 값을 %n% 로 설정하기', 'analogWrite', 3, 100],
+      [' ', '디지털 %n 번 핀을 %m.outputs', 'digitalWrite', 1, '켜기'],
+      [' ', '아날로그 %n 번 핀의 값을 %n로 설정하기', 'analogWrite', 3, 255],
       ['-'],
       ['h', '%n 번 핀의 상태가 %m.outputs 일 때', 'whenDigitalRead', 1, '켜기'],
       ['b', '%n 번 핀이 켜져있는가?', 'digitalRead', 1],
+      ['b', '디지털 %n 번 핀의 센서값', 'digitalWrite', 1],
       ['-'],
       ['h', '아날로그 %n 번 핀의 값이 %m.ops %n% 일 때', 'whenAnalogRead', 1, '>', 50],
       ['r', '아날로그 %n 번 핀의 값', 'analogRead', 0],
-      /*
       ['-'],
-      ['r', '%n 을(를) %n ~ %n 에서 %n ~ %n 의 범위로 바꾸기', 'mapValues', 50, 0, 100, -240, 240],
-      */
+      ['r', '%n 번 핀을(를) %n ~ %n 에서 %n ~ %n 의 범위로 바꾸기', 'mapValues', 50, 0, 100, -240, 240],
+      
 
       ['-'],
       [' ', '로봇을 멈추기','moveToStop'],
-      ['r', '울트라소닉 Trig %n Echo %n 센서 값','ultraSonic', 12, 13],
       [' ', '%m.wheel %n 으로 정하기', 'moveWheel', '왼쪽바퀴-앞', 50],
-      [' ', 'tone on pin %n, freq %n, duration %n', 'tone', 3, 440, 1000],
-      [' ', 'stop tone on pin %n', 'noTone', 3], 
-      //[' ', '6번 핀의 부저를 %m.buzz %n 음으로 설정', 'buzzer', '도', 100],
+      ['r', '울트라소닉 Trig %n Echo %n 센서 값','ultraSonic', 12, 13],
       ['-'],
-      [' ', '%n 번 핀을 %m.outputs', 'analogWrite', 3, '켜기'],
+      [' ', '%n 번 핀의 부저를 %n로 소리내기', 'analogWrite', 3, 255],
+      [' ', '%n 번 핀의 부저를, %n 음으로, %n 초 연주하기', 'tone', 3, 440, 1000],
+      [' ', '%n 번 핀의 부저를 멈추기', 'noTone', 3], 
+      //[' ', '6번 핀의 부저를 %m.buzz %n 음으로 설정', 'buzzer', '도', 100],
       ['r', '%n 번 핀을 %m.outputs', 'digitalWrite', 3, '켜기']
 
     ],
