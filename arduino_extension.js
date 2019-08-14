@@ -85,8 +85,7 @@
   var pinger = null;
 
   var hwList = new HWList();
-
-
+  
   function HWList() {
     this.devices = [];
 
@@ -353,6 +352,7 @@
       console.log('ERROR: valid tone pins are ' + pinModes[TONE].join(', '));
       return;
     }
+    pinMode(pin, TONE);
     var msg = new Uint8Array([
         START_SYSEX,
         0x5F,
@@ -371,6 +371,7 @@
       console.log('ERROR: valid tone pins are ' + pinModes[TONE].join(', '));
       return;
     }
+    pinMode(pin, TONE);
     var msg = new Uint8Array([
         START_SYSEX,
         0x5F,
