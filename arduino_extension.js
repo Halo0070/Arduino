@@ -48,8 +48,8 @@
   var LOW = 0,
     HIGH = 1;
 
-  var TONE_TONE = 1,
-    TONE_NO_TONE = 0;
+  var TONE_TONE = 0,
+    TONE_NO_TONE = 1;
 
   var MAX_DATA_BYTES = 4096;
   var MAX_PINS = 128;
@@ -585,12 +585,9 @@
     analogWrite(11, 0);
   };
 
-  tonemap: {
-
-  }
-
+  /*
   ext.buzzer = function(pin, val) {
-    /*
+    
     var tones = new Array();
     tones[0] = 261; //도
     tones[1] = 294; //레
@@ -600,7 +597,7 @@
     tones[5] = 440; //라
     tones[6] = 494; //시
     tones[7] = 523; //도
-    */
+    
 
   switch(pin){
     case "도":
@@ -629,6 +626,9 @@
       break;
   }
   };
+  */
+  
+  
   
   ext.ultraSonic = function(sensor_pin1, sensor_pin2) {
     var five = require("johnny-five");
